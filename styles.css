@@ -1,0 +1,183 @@
+:root {
+  --bgc-card-one: rgb(226, 133, 37);
+  --bgc-card-two: rgb(1 105 114);
+  --bgc-card-three: rgb(0 64 63);
+  --fc-card-one-btn: rgb(226, 133, 37);
+  --fc-card-two-btn: rgb(1 105 114);
+  --fc-card-three-btn: rgb(0 64 63);
+  --bgc-main: rgb(242, 242, 242);
+  --bgc-button: rgb(242, 242, 242);
+  --fc-title: rgb(242, 242, 242);
+  --fc-text: rgba(242, 242, 242, 0.75);
+  --fc-button-hov: rgba(242, 242, 242, 0.75);
+  --fw-bold: 700;
+  --fw-regular: 400;
+  --br-cards: 5px;
+  --bdr-button: 2em;
+  --bdr-card-one: 7.5px 7.5px 0 0;
+  --bdr-card-three: 0 0 7.5px 7.5px;
+  --fz-p: 15px;
+  --fz-title: 2.5em;
+  --fz-button: 1em;
+  --pd-card: 3em;
+  --lh-p: 1.75rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 3em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Lexend Deca", sans-serif;
+  color: var(--fc-text);
+  background-color: var(--bgc-main);
+  font-weight: car(--fw-regular);
+  font-size: var(--fz-p);
+}
+
+h1,
+h2 {
+  font-family: "Big Shoulders Display", cursive;
+  color: var(--fc-title);
+  font-size: var(--fz-title);
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.main {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3% 1fr 3%;
+}
+
+.cards {
+  grid-column: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  aspect-ratio: 1 / 1.4;
+  width: 325px;
+  padding: var(--pd-card);
+}
+
+.card-one {
+  background-color: var(--bgc-card-one);
+  border-radius: var(--bdr-card-one);
+}
+
+.card-two {
+  background-color: var(--bgc-card-two);
+}
+
+.card-three {
+  background-color: var(--bgc-card-three);
+  border-radius: var(--bdr-card-three);
+}
+
+.card__text {
+  line-height: var(--lh-p);
+}
+
+.card__icon {
+  display: inline-block;
+  width: 5em;
+}
+
+.button {
+  width: max-content;
+  padding: 1em 2em;
+  border-radius: var(--bdr-button);
+  background-color: var(--bgc-button);
+  transition: 0.3s;
+}
+
+.button:hover {
+  background-color: transparent;
+  color: var(--fc-button-hov);
+  border: 3px solid;
+}
+
+.button--card_one {
+  color: var(--fc-card-one-btn);
+}
+
+.button--card_two {
+  color: var(--fc-card-two-btn);
+}
+
+.button--card_three {
+  color: var(--fc-card-three-btn);
+}
+.footer {
+  margin-top: 2em;
+}
+
+.attribution {
+  display: flex;
+  justify-content: center;
+  gap: 0.1rem;
+  margin-top: 3em;
+  font-size: 11px;
+  text-align: center;
+  color: rgb(161, 165, 167);
+  opacity: 0.9;
+}
+
+.attribution a {
+  color: hsl(228, 21%, 58%);
+  text-decoration: none;
+}
+
+@media (min-width: 700px) {
+  :root {
+    --bdr-card-one: 7.5px 0 0 7.5px;
+    --bdr-card-two: 0 7.5px 7.5px 0;
+    --bdr-card-three: 7.5px;
+    --cards-rg: 1em;
+  }
+
+  .cards {
+    flex-direction: row;
+    justify-content: center;
+    row-gap: var(--cards-rg);
+  }
+
+  .card-two {
+    border-radius: var(--bdr-card-two);
+  }
+}
+
+@media (min-width: 1040px) {
+  :root {
+    --bdr-card-two: 0;
+    --bdr-card-three: 0 7.5px 7.5px 0;
+  }
+
+  body {
+    padding-top: 7em;
+  }
+
+  .card {
+    aspect-ratio: 1 / 1.6;
+  }
+}
